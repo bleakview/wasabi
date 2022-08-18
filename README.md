@@ -16,8 +16,8 @@ I write a article on it on [https://www.wasm.builders/bleakview/running-net-wher
 <figcaption>Running WASI on Linux RISC-V 64</figcaption>
 </figure>
 <figure>
-<img src="https://bleakview.github.io/git/wasabi/images/linux_ppc64le.jpg" alt="example linux with powerpc" width="800"/>
-<figcaption>Running WASI on Linux PowerPCle</figcaption>
+<img src="https://bleakview.github.io/git/wasabi/images/linux_ppc64le.jpg" alt="example linux with powerpc64le" width="800"/>
+<figcaption>Running WASI on Linux PowerPC64le</figcaption>
 </figure>
 <figure>
 <img src="https://bleakview.github.io/git/wasabi/images/freebsd_amd64.jpg" alt="example freebsd with amd64" width="800"/>

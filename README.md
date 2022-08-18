@@ -5,10 +5,12 @@ A multi platform runtime for WASI. It's written to show that its possible to run
 Tested with .Net 7 preview and AssemblyScript. Based on [Wazero](https://github.com/tetratelabs/wazero/).
 
 How to use
-After downloading from Release or compiling you can run wasa
+After downloading from Release or compiling yourself you can run WASI  files by
 ```
 wasabi executable.wasm
 ```
+I write a article on it on [https://www.wasm.builders/bleakview/running-net-where-it-has-never-run-before-risc-v-freebsd-and-beyond-4cd](https://www.wasm.builders/bleakview/running-net-where-it-has-never-run-before-risc-v-freebsd-and-beyond-4cd)
+
 <figure>
 <img src="https://bleakview.github.io/git/wasabi/images/linux_riscv64.jpg" alt="example linux with risc-v" width="800"/>
 <figcaption>Running WASI on Linux RISC-V 64</figcaption>

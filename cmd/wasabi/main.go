@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	"github.com/tetratelabs/wazero"
+	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
 	"github.com/tetratelabs/wazero/sys"
-	"github.com/tetratelabs/wazero/wasi_snapshot_preview1"
 )
 
 func main() {
@@ -25,11 +25,9 @@ func main() {
 	goOs := strings.ToLower(runtime.GOOS)
 	//If AoT is supported activate it else run in interpreted mode
 	if ((goArch == "amd64") || (goArch == "arm64")) && ((goOs == "windows") || (goOs == "linux")) {
-		r = wazero.NewRuntimeWithConfig(wazero.NewRuntimeConfigCompiler().
-			WithWasmCore2().WithFeatureBulkMemoryOperations(true))
+		r = wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfigCompiler())
 	} else {
-		r = wazero.NewRuntimeWithConfig(wazero.NewRuntimeConfigInterpreter().
-			WithWasmCore2().WithFeatureBulkMemoryOperations(true))
+		r = wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfigInterpreter())
 	}
 
 	defer r.Close(ctx) // This closes everything this Runtime created.
@@ -64,7 +62,7 @@ func main() {
 	}
 
 	// Compile the WebAssembly module using the default configuration.
-	code, err := r.CompileModule(ctx, catWasm, wazero.NewCompileConfig())
+	code, err := r.CompileModule(ctx, catWasm)
 	if err != nil {
 		log.Panicln(err)
 	}
